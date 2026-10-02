@@ -5,24 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=.7"/>
     <meta name="description" content="frequency links (2023). a multi-player synthesizer" />
     <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="frequency links (2023)" />
+    <meta property="og:title" content="zoes lights" />
     <meta property="og:type" content="article" />
     <meta property="og:url"/>
-    <meta property="og:description" content="frequency links by Tommy (2023)" />
-    <meta
-      property="og:image"
-      content="https://frequency-links.vercel.app/holdinghands.png"
-    />
+    <meta property="og:description" content="zoes lights" />
+    
     <meta name="twitter:card" content="summary" />
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.8/lib/p5.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5.sound@latest/dist/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="/socket.io/socket.io.js"></script>
-    <title>frequency-links</title>
+    <title>zoes lights</title>
   </head>
   <body>
+    <div class="container">
+        <div id="drawing">
+            <div id="poster"></div>
+            <div id="posterface"></div>
+            <div id="posterknee"></div>
+            <div id="posterarm1"></div>
+            <div id="posterarm2"></div>
+            <div id="posterbangs1"></div>
+            <div id="posterbangs2"></div>
+            <div id="posterblush1"></div>
+            <div id="posterblush2"></div>
+            <div id="postermouth"></div>
+            <div id="postereye1"></div>
+            <div id="postereye2"></div>
+            <div id="posterpupil1"></div>
+            <div id="posterpupil2"></div>
+            <div id="photobooth1"></div>
+            <div id="photobooth2"></div>
+            <div id="smallpicture"></div>
+            <div id="letter"></div>
+            <div id="bowl"></div>
+            <div id="jewelryboxtop"></div>
+            <div id="jewelryboxfront"></div>
+            <div id="jewelryboxdrawer"></div>
+            <div id="jewelryboxdrawerhandle"></div>
+            <div id="pictureframe"></div>
+            <div id="dresser"></div>
+            <div id="dresserfront"></div>
+            <div id="bracelet1"></div>
+            <div id="bracelet2"></div>
+        </div>
+
+        <p> this is a letter <br> from my best <br> friend <3</p>
+        <p id ="lightswitch" onclick="lightsToggle()">Click here to turn off lights</p>
     <div id="main">
     </div>
     <script src="sketch.js"></script>
+    
   </body>
 </html>
