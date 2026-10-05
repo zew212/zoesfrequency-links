@@ -1,62 +1,393 @@
-body {
-    margin:0;
-    padding:0;
-    min-height:100vh;
-    font-family: sans-serif;
-    font-size: 13px;
-    font-weight: 100;
-    }
 
-.controls {
-    margin:auto;
-    width:80%;  
-    text-align:center;  
+body, html {
+    background-color: rgb(214, 204, 209);
 }
 
-button {
-  font-size:12;
-  font-family: 'Playfair', sans-serif;
-  font-style: italic;
-  font-style: oblique;
-  /* background-color:transparent; */
-  /* border-color:red; */
-  border-radius:1000px;
-  border-style:solid;
-  border-width:1px; 
-  width:60px;
-  height:20px;
-  cursor:pointer;
-  /* color:white; */
-  /* box-shadow:1px 2px 8px grey; */
-  margin-left:10px;
+#lightswitch {
+  font-size: 30px;
+  font-family: arial;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: auto;
+    z-index: 1;
+    color:blue;
+    text-decoration: underline;
+    cursor: pointer;
+    
 }
 
-.disappear {
-  opacity: 0;
-  height:0px;
-  margin:0px;
-  padding:0px;
-  visibility: hidden;
+#ref {
+    position: absolute;
+    top: 0px;
+    left: 600px;
+    width: 150px;
+    z-index: 1;
+    border: 6px solid black;
 }
 
-#submit {
-  width:60px;
-  height:20px;
-  font-family: sans-serif;
+
+#letter {
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    z-index: 0;
+    width: 80px;
+    height: 110px;
+    background-color: rgb(245, 240, 237);
+    box-shadow: 1px 5px 0px 0px rgba(0, 0, 0, 0.5);
 }
 
-#buttonText {
-  width:60px;
-  height:20px;
-  font-family: sans-serif;
+#photobooth1 {
+    position: absolute;
+    top: 340px;
+    left: 250px;
+    z-index: 0;
+    width: 30px;
+    height: 90px;
+    background-color: rgb(11, 11, 11);
+    border: 2px solid rgb(255, 255, 255);
 }
 
-#main {
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:400px;
-  height:400px;
-  margin:25px auto 0;
+#photobooth2 {
+    position: absolute;
+    top: 340px;
+    left: 300px;
+    z-index: 0;
+    width: 30px;
+    height: 90px;
+    background-color: rgb(11, 11, 11);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#smallpicture {
+    position: absolute;
+    top: 430px;
+    left: 150px;
+    z-index: 1;
+    width: 60px;
+    height: 40px;
+    background-color: rgb(1, 1, 1);
+    box-shadow: 1px 5px 0px 0px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(255, 255, 255);
+}
+
+#poster {
+    position: absolute;
+    top: 200px;
+    left: 370px;
+    z-index: 2;
+    width: 150px;
+    height: 200px;
+    background-color: rgb(77, 39, 39);
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 1px 5px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+#posterface {
+    position: absolute;
+    top: 200px;
+    left: 370px;
+    z-index: 4;
+    width: 150px;
+    height: 200px;
+    background-color: rgb(77, 39, 39);
+    box-shadow: 1px 5px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+#dresser {
+    position: absolute;
+    clip-path: polygon(86% 77%, 95% 95%, 5% 95%, 14% 77%);
+    z-index: 3;
+    background-color: rgb(77, 39, 39);
+    box-shadow: 1px 5px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+#posterface {
+    position: absolute;
+    top: 230px;
+    left: 390px;
+    z-index: 3;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(239, 227, 220);
+    border-radius: 50%;
+}
+
+#posterknee {
+    position: absolute;
+    top: 252px;
+    left: 372px;
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(222, 211, 205);
+    clip-path: polygon(39% 56%, 100% 84%, 100% 100%, 0% 100%, 0% 73%, 24% 56%);
+}
+
+#posterarm1 {
+    position: absolute;
+    top: 280px;
+    left: 392px;
+    z-index: 4;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(246, 228, 217);
+    clip-path: ellipse(40% 8% at 50% 50%);
+    transform: rotate(30deg);
+}   
+
+#posterarm2 {
+    position: absolute;
+    top: 273px;
+    left: 360px;
+    z-index: 4;
+    width: 80px;
+    height: 150px;
+    background-color: rgb(239, 221, 210);
+    clip-path: ellipse(40% 8% at 50% 50%);
+    transform: rotate(-20deg);
+}
+
+#posterbangs1 {
+    position: absolute;
+    top: 160px;
+    left: 340px;
+    z-index: 10;
+    width: 130px;
+    height: 200px;
+    background-color: rgba(77, 39, 39, 0.769);
+    clip-path: ellipse(40% 8% at 50% 50%);
+    transform: rotate(-60deg);
+}
+
+#posterbangs2 {
+    position: absolute;
+    top: 160px;
+    left: 411px;
+    z-index: 510;
+    width: 120px;
+    height: 200px;
+    background-color: rgba(77, 39, 39, 0.814);
+    clip-path: ellipse(40% 8% at 50% 50%);
+    transform: rotate(38deg);
+}
+
+#dresser {
+    position: absolute;
+    top: 250px;
+    left: 80px;
+    z-index: 4;
+    width: 550px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 5px 0px 0px rgb(0, 0, 0);
+    border: 2px solid black;
+}
+
+#dresserfront {
+    position: absolute;
+    top: 638px;
+    left: 110px;
+    z-index: 3;
+    width: 500px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 5px 0px 0px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(0, 0, 0, 0.623);
+}
+
+#bowl {
+  position: relative;
+  top: 530px;
+  left: 170px;
+  z-index: 20;
+  width: 100px;
+  height: 50px;
+  background: linear-gradient(to bottom, #afb8ab, #44654e);
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: inset 0 -10px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: -11px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+#posterblush1 {
+    position: absolute;
+    top: 300px;
+    left: 403px;
+    z-index: 5;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(234, 155, 155);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(234, 155, 155), rgb(239, 227, 220));
+}
+
+#posterblush2 {
+    position: absolute;
+    top: 295px;
+    left: 453px;
+    z-index: 5;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(234, 155, 155);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(234, 155, 155), rgb(239, 227, 220));
+}   
+
+#postermouth {
+    position: absolute;
+    top: 300px;
+    left: 430px;
+    z-index: 10;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(234, 155, 155);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(150, 5, 5), rgb(46, 3, 59));
+}
+
+#postereye1 {
+    position: absolute;
+    top: 273px;
+    left: 396px;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    clip-path: ellipse(40% 24% at 50% 50%);
+    transform: rotate(-10deg);
+}
+
+#postereye2 {
+    position: absolute;
+    top: 268px;
+    left: 438px;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    clip-path: ellipse(40% 24% at 50% 50%);
+    transform: rotate(-10deg);
+}
+
+#posterpupil1 {
+    position: absolute;
+    top: 283px;
+    left: 411px;
+    z-index: 5;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+#posterpupil2 {
+    position: absolute;
+    top: 278px;
+    left: 453px;
+    z-index: 5;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+p {
+    position: absolute;
+    top: 270px;
+    left: 110px;
+    z-index: 5;
+  color: gray;           
+  font-size: 12px;        
+  line-height: 1.5;       
+  font-family: 'Brush Script MT';     
+}
+
+#jewelryboxtop {
+    position: absolute;
+    top: 350px;
+    left: 270px;
+    z-index: 5;
+    width: 300px;
+    height: 200px;
+    clip-path: polygon(86% 77%, 95% 95%, 5% 95%, 14% 77%);
+    background-color: rgb(0, 0, 0);
+    border-color: gold;
+}
+
+#jewelryboxfront {
+    position: absolute;
+    top: 540px;
+    left: 285px;
+    z-index: 5;
+    width: 270px;
+    height: 60px;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #afb8ab;
+}
+
+#jewelryboxdrawer {
+    position: absolute;
+    top: 600px;
+    left: 285px;
+    z-index: 5;
+    width: 270px;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid black;
+    border-color: rgb(235, 214, 97);
+}
+
+#jewelryboxdrawerhandle {
+    position: absolute;
+    top: 560px;
+    left: 410px;
+    z-index: 5;
+    width: 40px;
+    height: 5px;
+    background-color: rgb(235, 214, 97);
+}
+
+#bracelet1 {
+    position: absolute;
+    top: 480px;
+    left: 160px;
+    z-index: 5;
+    width: 100px;
+    height: 100px;
+    clip-path: ellipse(40% 12% at 50% 50%);
+    transform: rotate(20deg);
+    background: linear-gradient(
+    135deg,
+    #707070 0%,
+    #e0e0e0 25%,
+    #8c8c8c 50%,
+    #ffffff 75%,
+    #5e5e5e 100%
+  );
+}
+
+#bracelet2 {
+    position: absolute;
+    top: 480px;
+    left: 200px;
+    z-index: 5;
+    width: 100px;
+    height: 100px;
+    clip-path: ellipse(40% 12% at 50% 50%);
+    transform: rotate(-60deg);
+    background: linear-gradient(
+    135deg,
+    #bf953f 0%,
+    #fcf6ba 25%,
+    #b38728 50%,
+    #fbf5b7 75%,
+    #aa771c 100%
+  );
 }

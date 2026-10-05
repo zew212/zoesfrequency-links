@@ -22,16 +22,10 @@ io.on('connection', (socket) => {
   console.log('Client connected');
   console.log(socket.id);
   
-  //receives the frequency emitter from Client
-  socket.on("frequency", (arg) => {
+  //receives the lights emitter from Client
+  socket.on("lights", (arg) => {
     console.log(arg); 
-    io.emit('freqResponse', arg);
-  });
-
-  //receives the name emitter from Client
-  socket.on("name", (arg) => {
-    //console.log(arg);
-    io.emit('response', arg);
+    io.emit('lightState', arg);
   });
 
   socket.on('disconnect', () => console.log('Client disconnected'));
