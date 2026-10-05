@@ -23,8 +23,8 @@ io.on('connection', (socket) => {
   console.log(socket.id);
   
   //receives the lights emitter from Client
-  socket.on("lights", (arg) => {
-    console.log(arg); 
+  socket.on("localLightVariable", (arg) => {
+    console.log(arg);  
     io.emit('lightState', arg);
   });
 
