@@ -1,6 +1,18 @@
 let socket = io();
 let playing = false;
 
+// target slider 
+let slider = document.querySelector('#rotationSlider');
+console.log(slider);
+
+// listen for slider input and do something with the input
+slider.addEventListener("input", function(e) {
+    console.log(this.value);
+    socket.emit("rotation", data);
+});
+
+rotationSlider = select('#rotationSlider');
+
 function preload() {
     img = loadImage('holdinghands.png');
 }
@@ -37,84 +49,6 @@ function submit() {
 
 async function setup() {
     cnv = createCanvas(400, 400);
-    cnv.parent('main');
-    background(255, 255, 255, 0);
-    imageMode(CENTER);
-    image(img, width / 2, height / 2, 400, 400);
-    noStroke();
-    //create name field and button
-    //create instruction text
-    instruction = createP('enter your handle to begin');
-    instruction.id('instruction');
-    instruction.parent('main');
-    instruction.position(10, 170);
-    nameField = createInput();
-    nameField.id('name');
-    nameField.attribute('placeholder', 'enter your handle');
-    nameField.position(10, 10);
-    submitButton = createButton('submit');
-    submitButton.id('submit');
-    submitButton.position(nameField.x + nameField.width + 10, 10);
-    submitButton.mousePressed(submit);
-
-    //create inputStuff section
-    inputStuff = createDiv();
-    inputStuff.id('inputStuff');
-    inputStuff.parent('main');
-    inputStuff.position(10, 250);
-    //create frequency input and button
-    freqInput = createInput();
-    freqInput.id('frequency');
-    freqInput.attribute('placeholder', 'enter a frequency');
-    freqInput.position(10, 50);
-    sendButton = createButton('send');
-    sendButton.id('send');
-    sendButton.position(freqInput.x + freqInput.width + 10, 50);
-    sendButton.mousePressed(sendFreq);
-    //create play button
-    buttonEl = createButton('stop');
-    buttonEl.mousePressed(play);
-    buttonEl.id('buttonText');
-    buttonEl.position(10, 90);
-    //create frequency state text
-    freqState = createP('idle...');
-    freqState.class('freqState');
-    freqState.style('width', '400px');
-    freqState.position(10, 120);
-
-    //create name stuff section
-    nameStuff = createDiv();
-    nameStuff.id('nameStuff');
-    nameStuff.parent('main');
-    nameStuff.position(10, 210);
-    nameStuff.child(nameField);
-    nameStuff.child(submitButton);
-    //create input stuff section
-    inputStuff.child(buttonEl);
-    inputStuff.child(freqState);
-    inputStuff.child(freqInput);
-    inputStuff.child(sendButton);
-    //create title
-    title = createElement('h1', 'frequency links');
-    title.parent('main');
-    title.position(10, -10);
-    title.class('title');
-    //create subtitle
-    subtitle = createElement('p', 'a multi-person audio work');
-    subtitle.parent('main');
-    subtitle.position(10, 25);
-    subtitle.class('subtitle');
-    //attribution
-    attribution = createElement('p', 'by Tommy (2023)');
-    attribution.parent('main');
-    attribution.position(10, 35);
-    attribution.class('attribution');
-    //create a p5 sound oscillator
-    oscillator = new p5.Oscillator(440, "square");
-    oscillator.amp(0.33);
-    del = new p5.Delay(0.210, 0.66);
-    oscillator.disconnect();
-    oscillator.connect(del);
 }
 
 function play() {
