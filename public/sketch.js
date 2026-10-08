@@ -15,12 +15,14 @@ socket.on('lightState', (data) => {
     //lights on
     if (data === true) {
         //document.body.style.backgroundColor = "white";
-        poster.style.backgroundColor = "black";
+        poster.style.backgroundColor = "rgb(77, 39, 39)";
     } else {
         //lights off
-        poster.style.backgroundColor = "rgb(77, 39, 39)";
+        poster.style.backgroundColor = "black";
     }
 });
+
+
 
 //log new users as they come into the room
 socket.on('response', (data) => {
