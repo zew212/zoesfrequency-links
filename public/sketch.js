@@ -14,10 +14,10 @@ function lightsToggle() {
 socket.on('lightState', (data) => {
     //lights on
     if (data === true) {
-        background = "rgb(214, 204, 209)";
+        falsebackground.style.backgroundColor = "rgb(214, 204, 209)";
     } else {
         //lights off
-        background = "black";
+        falsebackground.style.backgroundColor = "black";
     }
 });
 
@@ -92,7 +92,7 @@ socket.on('lightState', (data) => {
     //lights on
     if (data === true) {
         //document.body.style.backgroundColor = "white";
-        photobooth1.style.borderColor = "black";
+        photobooth1.style.borderColor = "white";
     } else {
         //lights off
         photobooth1.style.borderColor = "gray";
@@ -125,7 +125,7 @@ socket.on('lightState', (data) => {
     //lights on
     if (data === true) {
         //document.body.style.backgroundColor = "white";
-        photobooth2.style.borderColor = "black";
+        photobooth2.style.borderColor = "white";
     } else {
         //lights off
         photobooth2.style.borderColor = "gray";
@@ -136,7 +136,7 @@ socket.on('lightState', (data) => {
     //lights on
     if (data === true) {
         //document.body.style.backgroundColor = "white";
-        smallpicture.style.borderColor = "black";
+        smallpicture.style.borderColor = "white";
     } else {
         //lights off
         smallpicture.style.borderColor = "gray";
@@ -262,6 +262,36 @@ socket.on('lightState', (data) => {
     } else {
         //lights off
         bowl.style.opacity = "0.5";
+    }
+});
+
+socket.on('lightState', (data) => {
+    //lights on
+    if (data === true) {
+        bracelet1.style.opacity = "1";
+    } else {
+        //lights off
+        bracelet1.style.opacity = "0";
+    }
+});
+
+socket.on('lightState', (data) => {
+    //lights on
+    if (data === true) {
+        bracelet2.style.opacity = "1";
+    } else {
+        //lights off
+        bracelet2.style.opacity = "0";
+    }
+});
+
+socket.on('lightState', (data) => {
+    //lights on
+    if (data === true) {
+        lightswitch.style.color = "blue";
+    } else {
+        //lights off
+        lightswitch.style.color = "rgba(186, 0, 0, 1)";
     }
 });
 
