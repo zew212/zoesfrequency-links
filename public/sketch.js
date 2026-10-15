@@ -11,12 +11,19 @@ function lightsToggle() {
     socket.emit('localLightVariable', lights);
 }
 
+function lightsOn() {
+    lights = true;
+    socket.emit('localLightVariable', true);
+}
+
 socket.on('lightState', (data) => {
     //lights on
     if (data === true) {
-        falsebackground.style.backgroundColor = "rgb(214, 204, 209)";
+        document.documentElement.style.backgroundColor = "rgb(214, 204, 209)";
+        document.body.style.backgroundColor = "rgb(214, 204, 209)";
         poster.style.backgroundColor = "rgb(77, 39, 39)";
-        posterbangs2.style.backgroundColor = "rgba(77, 39, 39, 0.81)";
+        posterbangs2.style.backgroundColor = "rgb(77, 39, 39)";
+        posterbangs1.style.backgroundColor = "rgb(77, 39, 39)";
         posterpupil1.style.backgroundColor = "rgb(77, 39, 39)";
         posterpupil2.style.backgroundColor = "rgb(77, 39, 39)";
         photobooth1.style.backgroundColor = "black";
@@ -29,6 +36,7 @@ socket.on('lightState', (data) => {
         jewelryboxtop.style.backgroundColor = "black";
         jewelryboxfront.style.backgroundColor = "black";
         jewelryboxdrawer.style.backgroundColor = "black";
+        jewelryboxdrawer.style.borderColor = "rgb(235, 214, 97)";
         jewelryboxdrawerhandle.style.backgroundColor = "rgb(235, 214, 97)";
         dresser.style.backgroundColor = "white";
         jewelryboxfront.style.borderColor = "gold";
@@ -42,9 +50,11 @@ socket.on('lightState', (data) => {
     }
      else {
         //lights off
-        falsebackground.style.backgroundColor = "black";
+        document.documentElement.style.backgroundColor = "black";
+        document.body.style.backgroundColor = "black";
         poster.style.backgroundColor = "white";
         posterbangs2.style.backgroundColor = "white";
+        posterbangs1.style.backgroundColor = "white";
         posterpupil1.style.backgroundColor = "red";
         posterpupil2.style.backgroundColor = "red";
         photobooth1.style.backgroundColor = "gray";
@@ -57,6 +67,7 @@ socket.on('lightState', (data) => {
         jewelryboxtop.style.backgroundColor = "gray";
         jewelryboxfront.style.backgroundColor = "gray";
         jewelryboxdrawer.style.backgroundColor = "gray";
+        jewelryboxdrawer.style.borderColor = "gray";
         jewelryboxdrawerhandle.style.backgroundColor = "gray";
         dresser.style.backgroundColor = "gray";
         jewelryboxfront.style.borderColor = "gray";

@@ -392,16 +392,6 @@ p {
   );
 }
 
-#falsebackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
-    width: 100%;
-    height: 100%;
-    background: rgb(214, 204, 209);
-}
-
 p2 {
     position: absolute;
     top: 270px;
@@ -411,4 +401,43 @@ p2 {
   font-size: 12px;        
   line-height: 1.5;       
   font-family: 'Brush Script MT';     
+}
+
+#lightswitch0 {
+    position: absolute;
+    top: 70px;
+    left: 110px;
+    z-index: 5;
+    width: 100px;
+    height: 50px;
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#lightswitchbutton1 {
+    position: absolute;
+    top: 80px;
+    left: 120px;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(5, 167, 102);
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#lightswitchbutton2 {
+    position: absolute;
+    top: 80px;
+    left: 160px;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(236, 54, 54);
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
 }
