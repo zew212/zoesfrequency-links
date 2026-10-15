@@ -2,13 +2,9 @@ let socket = io();
 let playing = false;
 let lights = true;
 
-function lightsToggle() {
-    if (lights) {
-        lights = false;
-    } else {
-        lights = true;
-    }
-    socket.emit('localLightVariable', lights);
+function lightsOff() {
+    lights = false;
+    socket.emit('localLightVariable', false);
 }
 
 function lightsOn() {
