@@ -22,11 +22,20 @@ io.on('connection', (socket) => {
   console.log('Client connected');
   console.log(socket.id);
   
-  //receives the lights emitter from Client
-  socket.on("localLightVariable", (arg) => {
+//receives the lights emitter from Client
+socket.on("localLightVariable", (arg) => {
     console.log(arg);  
     io.emit('lightState', arg);
   });
+
+  // 
+  socket.on('localBoxVariable', (arg) => {
+    io.emit('boxState', arg);
+});
+
+socket.on('localGhostPosition', (arg) => {
+    io.emit('ghostPosition', arg);
+});
 
   socket.on('disconnect', () => console.log('Client disconnected'));
 });

@@ -12,21 +12,33 @@ function lightsOn() {
     socket.emit('localLightVariable', true);
 }
 
+// ask the server to open/close the box for everyone
 function toggleBox() {
-    document.body.classList.toggle('boxopen');
-    // when closing, the ghost goes back to drawer
-    if (!document.body.classList.contains('boxopen')) {
-        ghost.style.left = ""; // "" removes values so the ghost goes back to its original position
-        ghost.style.top = ""; 
-    }
+    const open = !document.body.classList.contains('boxopen');
+    socket.emit('localBoxVariable', open);
 }
 
+// the server tells everyone whether the box is open
+socket.on('boxState', (open) => {
+    document.body.classList.toggle('boxopen', open);
+    if (!open) {
+        ghost.style.left = "";
+        ghost.style.top = "";
+    }
+});
+
+// send your cursor position to the server while the box is open
 document.addEventListener('mousemove', (e) => {
     if (document.body.classList.contains('boxopen')) {
-        ghost.style.left = (e.pageX - 25) + "px";
-        ghost.style.top = (e.pageY - 30 + 110) + "px";
-        // -25 and 30 center the ghost (based on how big it is), the 110 is added 
-        // because that is the amount it comes out of the drawer initially 
+        socket.emit('localGhostPosition', { x: e.pageX, y: e.pageY });
+    }
+});
+
+// the server tells everyone where the ghost should go
+socket.on('ghostPosition', (pos) => {
+    if (document.body.classList.contains('boxopen')) {
+        ghost.style.left = (pos.x - 25) + "px";
+        ghost.style.top = (pos.y - 30 + 110) + "px";
     }
 });
 
