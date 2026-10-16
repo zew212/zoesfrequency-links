@@ -165,7 +165,7 @@ body, html {
     position: absolute;
     top: 160px;
     left: 411px;
-    z-index: 510;
+    z-index: 200;
     width: 120px;
     height: 200px;
     background-color: rgba(77, 39, 39, 0.814);
@@ -354,6 +354,30 @@ p {
     background-color: rgb(235, 214, 97);
 }
 
+#ghost {
+    position: absolute;
+    top: 560px;
+    left: 395px;
+    z-index: 300;
+    width: 50px;
+    height: 60px;
+    background-color: white;
+    border-radius: 25px 25px 0 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 83% 88%, 67% 100%, 50% 88%, 33% 100%, 17% 88%, 0 100%);
+    opacity: 0;
+}
+
+/* whats the difference between . and # ? */
+.boxopen #jewelryboxdrawer {
+    transform: translateY(12px);
+}
+
+.boxopen #ghost {
+    opacity: 1;
+    transform: translateY(-110px);
+    animation: ghostfloat 2s ease-in-out 0.5s infinite;
+}
+
 #bracelet1 {
     position: absolute;
     top: 480px;
@@ -423,7 +447,7 @@ p2 {
     z-index: 5;
     width: 30px;
     height: 30px;
-    background-color: rgb(5, 167, 102);
+    background-color: rgb(255, 255, 255);
     border: 1px solid black;
     border-radius: 50%;
     cursor: pointer;
@@ -436,8 +460,19 @@ p2 {
     z-index: 5;
     width: 30px;
     height: 30px;
-    background-color: rgb(236, 54, 54);
+    background-color: rgb(0, 0, 0);
     border: 1px solid black;
     border-radius: 50%;
     cursor: pointer;
+}
+
+#jewelryboxdrawer {
+    transition: transform 0.5s ease;
+}
+
+#ghost {
+    transition: transform 0.5s ease, opacity 0.5s ease, top 0.4s ease-out, left 0.4s ease-out;
+    /* left and right are included to make the movement from origional place to mouse more ghosty */
+    pointer-events: none;
+    /* can click through mouse */
 }

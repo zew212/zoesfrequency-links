@@ -12,6 +12,24 @@ function lightsOn() {
     socket.emit('localLightVariable', true);
 }
 
+function toggleBox() {
+    document.body.classList.toggle('boxopen');
+    // when closing, the ghost goes back to drawer
+    if (!document.body.classList.contains('boxopen')) {
+        ghost.style.left = ""; // "" removes values so the ghost goes back to its original position
+        ghost.style.top = ""; 
+    }
+}
+
+document.addEventListener('mousemove', (e) => {
+    if (document.body.classList.contains('boxopen')) {
+        ghost.style.left = (e.pageX - 25) + "px";
+        ghost.style.top = (e.pageY - 30 + 110) + "px";
+        // -25 and 30 center the ghost (based on how big it is), the 110 is added 
+        // because that is the amount it comes out of the drawer initially 
+    }
+});
+
 socket.on('lightState', (data) => {
     //lights on
     if (data === true) {
@@ -42,7 +60,6 @@ socket.on('lightState', (data) => {
         bowl.style.opacity = "1";
         bracelet1.style.opacity = "1";
         bracelet2.style.opacity = "1";
-        lightswitch.style.color = "blue";
     }
      else {
         //lights off
@@ -63,18 +80,16 @@ socket.on('lightState', (data) => {
         jewelryboxtop.style.backgroundColor = "gray";
         jewelryboxfront.style.backgroundColor = "gray";
         jewelryboxdrawer.style.backgroundColor = "gray";
-        jewelryboxdrawer.style.borderColor = "gray";
-        jewelryboxdrawerhandle.style.backgroundColor = "gray";
+        jewelryboxdrawer.style.borderColor = "black";
+        jewelryboxdrawerhandle.style.backgroundColor = "black";
         dresser.style.backgroundColor = "gray";
-        jewelryboxfront.style.borderColor = "gray";
+        jewelryboxfront.style.borderColor = "black";
         dresserfront.style.backgroundColor = "gray";
         dresserfront.style.borderColor = "gray";
         bowl.style.background = "rgba(177, 4, 4, 1)";
         bowl.style.opacity = "0.5";
         bracelet1.style.opacity = "0";
-        bracelet2.style.opacity = "0";
-        lightswitch.style.color = "rgba(186, 0, 0, 1)";
-    }
+        bracelet2.style.opacity = "0";    }
 });
 
 //log new users as they come into the room
